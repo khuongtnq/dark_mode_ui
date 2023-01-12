@@ -1,0 +1,133 @@
+/* Gobal */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", serif;
+}
+
+.container {
+    max-width: 1640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrapper {
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+@media (min-width: 62em) {
+    .wrapper {
+        padding: 0 138px;
+    }
+}
+
+/* header */
+
+header {
+    padding: 0 15px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 280px;
+}
+
+.navbar__logo {
+    font-size: 1.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.navbar__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.navbar__link {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.navbar__link a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #000;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in;
+}
+
+.navbar__link a:hover {
+    color: #A88EEB;
+    transition: all 0.3s ease-in;
+}
+
+/* toggle-btn */
+.navbar__toggle-btn {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    width: 63px;
+    height: 31px;
+    background: #A88EEB;
+    display: block;
+    border-radius: 30px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.3s;
+}
+.navbar__toggle-btn:checked + label {
+    background: #A88EEB;
+}
+.navbar__toggle-btn:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    background: #fff;
+}
+
+@media (min-width: 62em) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        min-height: 140px;
+    }
+    .navbar__links {
+        flex-direction: row;
+    }
+    .navbar__link {
+        flex-direction: row;
+        margin: 0 35px;
+    }
+}
