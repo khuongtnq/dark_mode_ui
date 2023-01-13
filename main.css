@@ -9,6 +9,7 @@
 
 body {
     font-family: "Nunito", serif;
+    background-image: linear-gradient(to right, var(--bg-color), var(--bg-color2));
 }
 
 .container {
@@ -24,6 +25,24 @@ body {
 img {
     max-width: 100%;
     width: 100%;
+}
+
+:root {
+    --bg-color: #fff;
+    --bg-color2: #fff;
+    --text-color: #000;
+    --purple: #A88EEB;
+    --page: #ffeaff;
+    --toggle-bg: #a88eeb;
+    --toggle-circle: #fff; 
+}
+
+.darkmodeUi {
+    --bg-color: #000;
+    --bg-color2: #4c3b77;
+    --text-color: #fff;
+    --toggle-bg: #fff;
+    --toggle-circle: #a88eeb;
 }
 
 @media (min-width: 62em) {
@@ -50,7 +69,13 @@ header {
     font-size: 1.625rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #000;
+    color: var(--text-color);
+}
+
+.navbar__logo img {
+    max-width: 80px;
+    width: 80px;
+
 }
 
 .navbar__links {
@@ -70,13 +95,13 @@ header {
 .navbar__link a {
     text-decoration: none;
     font-size: 1.25rem;
-    color: #000;
+    color: var(--text-color);
     text-transform: capitalize;
     transition: all 0.3s ease-in;
 }
 
 .navbar__link a:hover {
-    color: #A88EEB;
+    color: var(--purple);
     transition: all 0.3s ease-in;
 }
 
@@ -91,7 +116,7 @@ label {
     cursor: pointer;
     width: 63px;
     height: 31px;
-    background: #A88EEB;
+    background: var(--toggle-bg);
     display: block;
     border-radius: 30px;
     position: relative;
@@ -105,18 +130,18 @@ label:after {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #fff;
+    background: var(--toggle-circle);
     transition: 0.3s;
 }
 
 .navbar__toggle-btn:checked+label {
-    background: #A88EEB;
+    background: var(--toggle-bg);
 }
 
 .navbar__toggle-btn:checked+label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
-    background: #fff;
+    background: var(--toggle-circle);
 }
 
 @media (min-width: 62em) {
@@ -157,13 +182,13 @@ label:after {
 
 .banner__desc h1 {
     font-size: 4rem;
-    color: #000;
+    color: var(--text-color);
     text-transform: capitalize;
 }
 
 .banner__desc p {
     font-size: 1.5rem;
-    color: #000;
+    color: var(--text-color);
     padding-top: 15px;
     max-width: 700px;
     width: 100%;
@@ -178,7 +203,7 @@ label:after {
     display: inline-block;
     text-decoration: none;
     overflow: hidden;
-    color: #000;
+    color: var(--text-color);
     font-weight: 400px;
     cursor: pointer;
     padding: 1em 2em;
